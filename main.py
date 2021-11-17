@@ -62,12 +62,30 @@ for i in range(0, int(lengthOfInput)):
 #x = [0.93, 0.47, 0.26, 0.16, 0.97, 0.74, 0.93, 0.36, 0.48, 0.49, 0.84, 0.77]
 #y = [8.56, 5.98, 6.83, 5.26, 9.78, 7.51, 8.41, 6.72, 6.82, 5.14, 7.56, 6.64]
 
+meanx = calcSampleMean(x)
+meany = calcSampleMean(y)
+
 print("-------------")
 print("Values: ")
 print("X: ")
 print(x)
 print("Y: ")
 print(y)
+
+print("-------------")
+print("Mean X: ")
+print(calcSampleMean(x))
+print("Mean Y: ")
+print(calcSampleMean(y))
+
+print("-------------")
+
+print("S_xy: ")
+print(calcxy(x, y, meanx, meany))
+print("S_xx: ")
+print(calcsxx(x, meanx))
+print("S_yy: ")
+print(calcsxx(y, meany))
 
 b1 = calcb1(x, y)
 b0 = calcb0(b1, x, y)
