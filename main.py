@@ -6,6 +6,14 @@ def calcSampleMean(values):
 
     return sum / len(values)
 
+def calcVariance(values):
+    samplemean = calcSampleMean(values)
+    sum = 0
+    for value in values:
+        sum += (value - samplemean) ** 2
+
+    return sum / (len(values) - 1)
+
 
 def calcsxx(values, mean):
     sum = 0
@@ -59,8 +67,8 @@ for i in range(0, int(lengthOfInput)):
     x.append(float(xinput))
     y.append(float(yinput))
 
-#x = [0.93, 0.47, 0.26, 0.16, 0.97, 0.74, 0.93, 0.36, 0.48, 0.49, 0.84, 0.77]
-#y = [8.56, 5.98, 6.83, 5.26, 9.78, 7.51, 8.41, 6.72, 6.82, 5.14, 7.56, 6.64]
+x = [0.93, 0.47, 0.26, 0.16, 0.97, 0.74, 0.93, 0.36, 0.48, 0.49, 0.84, 0.77]
+y = [8.56, 5.98, 6.83, 5.26, 9.78, 7.51, 8.41, 6.72, 6.82, 5.14, 7.56, 6.64]
 
 meanx = calcSampleMean(x)
 meany = calcSampleMean(y)
@@ -77,6 +85,13 @@ print("Mean X: ")
 print(calcSampleMean(x))
 print("Mean Y: ")
 print(calcSampleMean(y))
+
+
+print("-------------")
+print("Variance X: ")
+print(calcVariance(x))
+print("Variance Y: ")
+print(calcVariance(y))
 
 print("-------------")
 
