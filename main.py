@@ -38,6 +38,15 @@ def calcb1(valuesx, valuesy):
 def calcb0(b1, valuesx, valuesy):
     return calcSampleMean(valuesy) - b1 * calcSampleMean(valuesx)
 
+def calcR2(valuesx, valuesy):
+    meanx = calcSampleMean(valuesx)
+    meany = calcSampleMean(valuesy)
+
+    sxy_squared = calcxy(valuesx, valuesy, meanx, meany) ** 2
+    sxx = calcsxx(valuesx, meanx)
+    syy = calcsxx(valuesy, meany)
+
+    return sxy_squared / (sxx * syy)
 
 lengthOfInput = input("Amount of points: ")
 
@@ -73,5 +82,11 @@ print("-------------")
 print("This gives the estimated line: ")
 print("y = " + str(b0) + " + " + str(b1) + "x")
 print("-------------")
+
+print("R^2")
+print(calcR2(x, y))
+
+print("-------------")
+
 
 
