@@ -116,6 +116,17 @@ print("This gives the estimated line: ")
 print("y = " + str(b0) + " + " + str(b1) + "x")
 print("-------------")
 
+print("Estimated y")
+for xs in x:
+    print("(" + str(xs) + ", " + str(b0 + b1*xs) + ")")
+
+print("-------------")
+
+print("Residuals")
+for i in range(0, len(x)):
+    print("e" + str(i) + "=" + str(y[i]) + ", " + str(b0 + b1*x[i]) + " = " + str(y[i]- (b0 + b1*x[i])))
+
+print("-------------")
 print("R^2")
 print(calcR2(x, y))
 
