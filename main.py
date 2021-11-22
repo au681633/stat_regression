@@ -96,20 +96,21 @@ print(calcVariance(y))
 print("-------------")
 
 print("S_xy: ")
-print(calcxy(x, y, meanx, meany))
+xy = calcxy(x, y, meanx, meany)
+print(xy)
 print("S_xx: ")
-print(calcsxx(x, meanx))
+xx = calcsxx(x, meanx)
+print(xx)
 print("S_yy: ")
-print(calcsxx(y, meany))
+yy = calcsxx(y, meany)
+print(yy)
 
 b1 = calcb1(x, y)
 b0 = calcb0(b1, x, y)
 
 print("-------------")
-print("B1: ")
-print(b1)
-print("B0: ")
-print(b0)
+print("b1 = S_xy / S_xx = " + str(xy) + " / " + str(xx) + " = " + str(b1))
+print("B0 = meany - b1 * meanx = " + str(meany) + " - " + str(b1) + " * " + str(meanx) + " = " + str(b0))
 
 print("-------------")
 print("This gives the estimated line: ")
@@ -124,7 +125,7 @@ print("-------------")
 
 print("Residuals")
 for i in range(0, len(x)):
-    print("e" + str(i) + "=" + str(y[i]) + ", " + str(b0 + b1*x[i]) + " = " + str(y[i]- (b0 + b1*x[i])))
+    print("e" + str(i) + " = " + str(y[i]) + " - " + str(b0 + b1*x[i]) + " = " + str(y[i]- (b0 + b1*x[i])))
 
 print("-------------")
 print("R^2")
